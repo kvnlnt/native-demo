@@ -1,0 +1,17 @@
+.btn {
+    font-size: 1.6rem;
+    line-height: 4rem;
+    padding:0 1.5rem;
+    text-decoration: none;
+    background-color: #FF6e19;
+    display: inline-block;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    border-bottom: 0.4rem solid #eb6819;
+}
+
+.btn:hover {
+    background-color: #ff8b47;
+    transition: background-color 0.5s ease;    
+}

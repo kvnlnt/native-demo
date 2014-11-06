@@ -1,0 +1,19 @@
+@include mq(mobile-landscape){
+
+    .top {
+        .wrapper {
+            max-width: $mobile-landscape-width;
+            margin: 0 1rem;
+        }
+        ul {
+            text-align:right;
+        }
+    }
+
+    .main {
+        h1 {
+            width:154px;
+        }
+    }
+
+}
