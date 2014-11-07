@@ -2,18 +2,25 @@
     .toggle {
         display: none;
     }
+    .top {
+        .wrapper {
+            max-width: $tablet-width;
+            margin:0 auto;
+        }
+        .links {
+            margin-right:3rem;
+        }
+    }
     .main {
         .wrapper {
-            max-width: $desktop-width;
+            max-width: $tablet-width;
             margin: 0 auto;
         }
         .links {
             display: inline-block;
-            width: auto;
-            &.hidden {
-                visibility: visible;
-                max-height: 1000px;
-            }
+            width: ($tablet-width - 200);
+            visibility: visible;
+            max-height: 1000px;
             .page {
                 display: inline-block;
                 li {
@@ -28,6 +35,7 @@
                 }
             }
             .account {
+                float: right;
                 display: inline-block;
                 li {
                     display: inline-block;

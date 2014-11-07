@@ -35,14 +35,14 @@
                 line-height: 3.5rem;
                 text-decoration: none;
                 &:hover {
-                    color: $light_gray;
+                    color: $gray_light;
                     transition: color 0.25s ease;
                 }
             }
         }
     }
     .main {
-        background-color: $dark_gray;
+        background-color: $gray;
         .wrapper {
             max-width: 100%;
             margin: 0 auto;
@@ -59,20 +59,19 @@
             vertical-align: top;
         }
         .links {
-            visibility: visible;
-            max-height: 1000px;
-            -webkit-transition: visibility 0.35s, max-height 0.35s ease-in;
-            transition: visibility 0.35s, max-height 0.35s ease-in;
-            overflow: auto;
+            overflow: hidden;
+            visibility: hidden;
+            max-height: 0;
             margin:0;
             display: block;
             width:100%;
-            &.hidden {
-                overflow: hidden;
-                visibility: hidden;
-                max-height: 0;
-                -webkit-transition: visibility 0.2s, max-height 0.2s ease;
-                transition: visibility 0.2s, max-height 0.2s ease;
+            &.show {
+                overflow: auto;
+                visibility: visible;
+                max-height: 1000px;
+                -webkit-transition: visibility 0.35s, max-height 0.35s ease-in;
+                transition: visibility 0.35s, max-height 0.35s ease-in;
+                
             }
             .page {
                 margin: 0;
@@ -110,10 +109,36 @@
                     a {
                         display: block;
                         color: $white;
-                        line-height: 5rem;
+                        line-height: 1.5rem;
                         text-decoration: none;
                         margin: 0;
                         text-align: center;
+                        margin: 1.80rem 0.75rem 0;
+                        border-radius: 4px;
+
+                        &.login {
+                            border: 3px solid $gray;
+                            padding: 0.75rem 1.5rem;
+                            background-color: $gray;
+                            transition: background-color 1s ease;
+                            &:hover {
+                                background-color: $gray_dark;
+                                border: 3px solid $gray_dark;
+                                transition: background-color 1s ease;
+                            }
+                        }
+
+                        &.signup {
+                            margin-bottom:1rem;
+                            border: 3px solid $white;
+                            padding: 0.75rem 1.5rem;
+                            &:hover {
+                                background-color: $orange;
+                                border: 3px solid $orange;
+                                transition: background-color 0.25s ease;
+                            }
+                        }
+
                     }
                 }
             }

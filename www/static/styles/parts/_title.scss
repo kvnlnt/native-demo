@@ -1,0 +1,22 @@
+#title {
+
+    background-color: $blue;
+    padding:2rem;
+
+    @include mq(mobile) {
+        h1 {
+            font-size:3rem;
+            text-align: center;
+        }
+    }
+
+    @include mq(mobile-landscape) {
+        h1 {
+            font-size:4.2rem;
+            text-align: left;
+            max-width: $tablet-width;
+            margin:0 auto;
+        }
+    }
+
+}
