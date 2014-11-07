@@ -12,6 +12,7 @@ var menu = (function(module){
     module.toggle = function(e){
         e.preventDefault();
         DOM.links.toggleClass('hidden');
+        DOM.toggle.find('i').toggleClass('fa-rotate-90');
     };
 
     module.init = function(){

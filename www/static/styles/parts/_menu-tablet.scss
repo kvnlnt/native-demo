@@ -1,4 +1,42 @@
-@include mq(tablet){
-
-
+@include mq(tablet) {
+    .toggle {
+        display: none;
+    }
+    .main {
+        .wrapper {
+            max-width: $desktop-width;
+            margin: 0 auto;
+        }
+        .links {
+            display: inline-block;
+            width: auto;
+            &.hidden {
+                visibility: visible;
+                max-height: 1000px;
+            }
+            .page {
+                display: inline-block;
+                li {
+                    display: inline-block;
+                    width: auto;
+                    a {
+                        display: inline-block;
+                        height:7.5rem;
+                        line-height: 7.5rem;
+                        padding:0 3rem;
+                    }
+                }
+            }
+            .account {
+                display: inline-block;
+                li {
+                    display: inline-block;
+                    width: auto;
+                    a {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
 }

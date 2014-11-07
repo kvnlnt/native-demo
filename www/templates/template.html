@@ -13,6 +13,7 @@
         {% endblock %}
 
         {% block styles %}
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/vendor.min.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/styles.min.css') }}" />
         {% endblock %}
 
