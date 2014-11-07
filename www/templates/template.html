@@ -31,7 +31,7 @@
         {% block scripts %}
             <script src="{{ url_for('static', filename='assets/vendor.min.js') }}"></script>
             <script src="{{ url_for('static', filename='assets/scripts.min.js') }}"></script>
-            <script src="//localhost:35729/livereload.js"></script>
+            {% if config.DEBUG %}<script src="//localhost:35729/livereload.js"></script>{% endif %}
         {% endblock %}
 
     </body>
