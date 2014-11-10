@@ -1,7 +1,22 @@
-#title {
+#header {
 
     background-color: $blue;
     padding:2rem;
+
+    .wrapper {
+         max-width: $tablet-width;
+        margin:0 auto;
+    }
+   
+    h1 {
+        color:$white;
+    }
+
+    .desc {
+        color: $white;
+        font-size: 1.2rem;
+        max-width: 400px;
+    }
 
     @include mq(mobile) {
         h1 {

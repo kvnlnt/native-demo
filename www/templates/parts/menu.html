@@ -14,11 +14,11 @@
             <a href="/"><h1>Flowroute Inc.</h1></a>
             <div class="links">
                 <ul class="page strong">
-                    <li><a href="/voice">VOICE</a></li>
-                    <li><a href="/solutions">SOLUTIONS</a></li>
-                    <li><a href="/pricing">PRICING</a></li>
-                    <li><a href="/developers">DEVELOPERS</a></li>
-                    <li><a href="/partners">PARTNERS</a></li>
+                    <li><a href="/voice" class="{% if request.path == '/voice' %}selected{% endif %}">VOICE</a></li>
+                    <li><a href="/solutions" class="{% if request.path == '/solutions' %}selected{% endif %}">SOLUTIONS</a></li>
+                    <li><a href="/pricing" class="{% if request.path == '/pricing' %}selected{% endif %}">PRICING</a></li>
+                    <li><a href="/developers" class="{% if request.path == '/developers' %}selected{% endif %}">DEVELOPERS</a></li>
+                    <li><a href="/partners" class="{% if request.path == '/partners' %}selected{% endif %}">PARTNERS</a></li>
                 </ul>
                 <ul class="account">
                     <li><a href="/login" class="login">LOGIN</a></li>
@@ -27,4 +27,37 @@
             </div>
         </div>
     </div>
+    {% if request.path != '/' %}
+    <div class="sub">
+        <div class="wrapper">
+            {% if request.path == '/voice' %}
+                <ul class="voice">
+                    <li><a href="" class="active">voice one</a></li>
+                    <li><a href="">voice two</a></li>
+                    <li><a href="">voice three</a></li>
+                </ul>
+            {% endif %}
+            {% if request.path == '/solutions' %}
+                <ul class="voice">
+                    <li><a href="">solution 1</a></li>
+                </ul>
+            {% endif %}
+            {% if request.path == '/pricing' %}
+                <ul class="voice">
+                    <li><a href="">pricing 1</a></li>
+                </ul>
+            {% endif %}
+            {% if request.path == '/developers' %}
+                <ul class="voice">
+                    <li><a href="">dev 1</a></li>
+                </ul>
+            {% endif %}
+            {% if request.path == '/partners' %}
+                <ul class="voice">
+                    <li><a href="">partners 1</a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
 </nav>

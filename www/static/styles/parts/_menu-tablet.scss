@@ -15,6 +15,7 @@
         .wrapper {
             max-width: $tablet-width;
             margin: 0 auto;
+            height: 7.5rem;
         }
         .links {
             display: inline-block;
@@ -26,11 +27,25 @@
                 li {
                     display: inline-block;
                     width: auto;
+                    font-size: 0;
+                    position:relative;
                     a {
                         display: inline-block;
                         height:7.5rem;
                         line-height: 7.5rem;
                         padding:0 3rem;
+                        &.selected:after {
+                            content:"";
+                            width: 0; 
+                            height: 0; 
+                            border-left: 10px solid transparent;
+                            border-right: 10px solid transparent;
+                            border-bottom: 10px solid $blue_dark;
+                            position: absolute;
+                            bottom:0;
+                            left:50%;
+                            margin:0 0 0 -10px;
+                        }
                     }
                 }
             }
@@ -44,6 +59,15 @@
                         display: inline-block;
                     }
                 }
+            }
+        }
+    }
+    .sub {
+        ul {
+            text-align: left;
+            li {
+                display: inline-block;
+                margin-right:5rem;
             }
         }
     }
