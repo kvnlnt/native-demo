@@ -1,3 +1,4 @@
+{% from "pieces/link.html" import link with context %}
 <nav id="menu">
     <div class="top">
         <div class="wrapper">
@@ -14,11 +15,11 @@
             <a href="/"><h1>Flowroute Inc.</h1></a>
             <div class="links">
                 <ul class="page strong">
-                    <li><a href="/voice" class="{% if request.path == '/voice' %}selected{% endif %}">VOICE</a></li>
-                    <li><a href="/solutions" class="{% if request.path == '/solutions' %}selected{% endif %}">SOLUTIONS</a></li>
-                    <li><a href="/pricing" class="{% if request.path == '/pricing' %}selected{% endif %}">PRICING</a></li>
-                    <li><a href="/developers" class="{% if request.path == '/developers' %}selected{% endif %}">DEVELOPERS</a></li>
-                    <li><a href="/partners" class="{% if request.path == '/partners' %}selected{% endif %}">PARTNERS</a></li>
+                    <li>{{ link('.voice', 'VOICE') }}</li>
+                    <li>{{ link('.solutions', 'SOLUTIONS') }}</li>
+                    <li>{{ link('.pricing', 'PRICING') }}</li>
+                    <li>{{ link('.developers', 'DEVELOPERS') }}</li>
+                    <li>{{ link('.partners', 'PARTNERS') }}</li>
                 </ul>
                 <ul class="account">
                     <li><a href="/login" class="login">LOGIN</a></li>
