@@ -28,37 +28,11 @@
             </div>
         </div>
     </div>
-    {% if request.path != '/' %}
     <div class="sub">
         <div class="wrapper">
-            {% if request.path == '/voice' %}
-                <ul class="voice">
-                    <li><a href="" class="active">voice one</a></li>
-                    <li><a href="">voice two</a></li>
-                    <li><a href="">voice three</a></li>
-                </ul>
-            {% endif %}
-            {% if request.path == '/solutions' %}
-                <ul class="voice">
-                    <li><a href="">solution 1</a></li>
-                </ul>
-            {% endif %}
-            {% if request.path == '/pricing' %}
-                <ul class="voice">
-                    <li><a href="">pricing 1</a></li>
-                </ul>
-            {% endif %}
-            {% if request.path == '/developers' %}
-                <ul class="voice">
-                    <li><a href="">dev 1</a></li>
-                </ul>
-            {% endif %}
-            {% if request.path == '/partners' %}
-                <ul class="voice">
-                    <li><a href="">partners 1</a></li>
-                </ul>
-            {% endif %}
+            <ul>
+                <li>{{ link('.solutions', 'SOLUTIONS') }}</li>
+            </ul>
         </div>
     </div>
-    {% endif %}
 </nav>

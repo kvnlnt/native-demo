@@ -1,8 +1,9 @@
 #! ../env/bin/python
 import os
 
-from flask import Flask
+from flask import Flask, g
 from www.controller import main
+
 
 def create_app(object_name, env="prod"):
     """

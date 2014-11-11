@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, g
+from flask import Blueprint, render_template
 
 
 main = Blueprint('main', __name__, template_folder='templates')
@@ -37,8 +37,3 @@ def partners():
 @main.route('/login')
 def login():
     return render_template("pages/login.html")
-
-
-@main.route('/signup')
-def signup():
-    return render_template("pages/signup.html")
