@@ -6,4 +6,6 @@ var pages = (function(module){
 
     $(document).on('ready', module.init);
 
+    return module;
+
 })(pages || {});

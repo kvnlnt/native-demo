@@ -20,5 +20,9 @@ module.exports = {
     vendor_scripts: {
         files: ['www/static/vendor/scripts/**/*.js'],
         tasks: ['uglify:vendor_files']
+    },
+    test_scripts: {
+        files: ['tests/specs/**/*.js'],
+        tasks: ['jasmine']
     }
 }

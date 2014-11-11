@@ -1,6 +1,6 @@
 var menu = (function(module){
 
-    var DOM           = {};
+    var DOM           = module.DOM = {};
     DOM.main          = $("#menu .main");
     DOM.links         = $("#menu .main .links");
     DOM.page_links    = $("#menu .main .links .page");
@@ -23,5 +23,8 @@ var menu = (function(module){
 
     // boot file
     $(document).on('ready', module.init);
+
+    // return the module
+    return module;
 
 })(menu || {});
