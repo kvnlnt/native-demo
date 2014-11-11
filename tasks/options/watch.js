@@ -15,7 +15,7 @@ module.exports = {
     },
     app_scripts: {
         files: ['www/static/scripts/**/*.js'],
-        tasks: ['uglify:app_files']
+        tasks: ['uglify:app_files', 'jasmine']
     },
     vendor_scripts: {
         files: ['www/static/vendor/scripts/**/*.js'],
