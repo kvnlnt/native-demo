@@ -1,13 +1,21 @@
 /**
-* Main menu module
-* @namespace menu
+* All menu functionality is contained within this module.
+* @module menu
 * @version 1.0
 */
 
+"use strict";
+
 flowroute.menu = (function(module){
 
-    // register dom elements
-    var el           = module.el = {};
+    /** @exports menu */
+
+    /**
+     * DOM elements
+     * @member flowroute.menu.el
+     * @memberOf module:menu
+     */
+    var el           = {};
     el.main          = $("#menu .main");
     el.links         = $("#menu .main .links");
     el.page_links    = $("#menu .main .links .page");
@@ -17,11 +25,12 @@ flowroute.menu = (function(module){
     el.toggle        = $("#menu .toggle");
     
     /**
-     * Toggle menu hamburger
-     * @memberof menu
-     * @param  {object} e - click event
+     * toggles menu hamburger button
+     * @function flowroute.menu.toggle
+     * @memberOf module:menu
+     * @param  {Object} e - click event
      */
-    module.toggle = function(e){
+    var toggle = function(e){
 
         // prevent default
         e.preventDefault();
@@ -36,9 +45,10 @@ flowroute.menu = (function(module){
 
     /**
      * Initialize module
-     * @memberof menu
+     * @function flowroute.menu.init
+     * @memberOf module:menu
      */
-    module.init = function(){
+    var init = function(){
         
         // toggle menu on click
         el.toggle.on('click', module.toggle);
@@ -46,9 +56,12 @@ flowroute.menu = (function(module){
     };
 
     // boot file
-    $(document).on('ready', module.init);
+    $(document).on('ready', init);
 
-    // return the module
-    return module;
+    // export
+    return {
+        init:init,
+        toggle:toggle,
+    };
 
 })(flowroute.menu || {});
