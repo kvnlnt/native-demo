@@ -1,3 +1,9 @@
+/**
+* Main menu module
+* @namespace menu
+* @version 1.0
+*/
+
 flowroute.menu = (function(module){
 
     // register dom elements
@@ -12,8 +18,8 @@ flowroute.menu = (function(module){
     
     /**
      * Toggle menu hamburger
-     * @param  {object} e click event
-     * @return {null}
+     * @memberof menu
+     * @param  {object} e - click event
      */
     module.toggle = function(e){
 
@@ -30,7 +36,7 @@ flowroute.menu = (function(module){
 
     /**
      * Initialize module
-     * @return {[type]} [description]
+     * @memberof menu
      */
     module.init = function(){
         

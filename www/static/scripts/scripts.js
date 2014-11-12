@@ -1,2 +1,2 @@
-// default namespace
+/** default namespace */
 var flowroute = {};
