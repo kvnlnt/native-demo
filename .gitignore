@@ -35,6 +35,9 @@ database.db
 # Sphinx
 docs/_build
 
+# jsdocs
+docs/javascript
+
 # Virtual environments
 env
 env*
