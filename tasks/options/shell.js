@@ -7,5 +7,8 @@ module.exports = {
         options:{
             async:true
         }
+    },
+    test:{
+        command:'make test',
     }
 }

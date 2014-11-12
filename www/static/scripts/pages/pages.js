@@ -1,4 +1,4 @@
-var pages = (function(module){
+flowroute.pages = (function(module){
     
     module.init = function(){
         console.log('page has loaded');
@@ -8,4 +8,4 @@ var pages = (function(module){
 
     return module;
 
-})(pages || {});
+})(flowroute.pages || {});

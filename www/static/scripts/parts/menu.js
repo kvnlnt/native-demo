@@ -1,23 +1,41 @@
-var menu = (function(module){
+flowroute.menu = (function(module){
 
-    var DOM           = module.DOM = {};
-    DOM.main          = $("#menu .main");
-    DOM.links         = $("#menu .main .links");
-    DOM.page_links    = $("#menu .main .links .page");
-    DOM.account_links = $("#menu .main .links .account");
-    DOM.menu          = $("#menu");
-    DOM.top           = $("#menu .top");
-    DOM.toggle        = $("#menu .toggle");
+    // register dom elements
+    var el           = module.el = {};
+    el.main          = $("#menu .main");
+    el.links         = $("#menu .main .links");
+    el.page_links    = $("#menu .main .links .page");
+    el.account_links = $("#menu .main .links .account");
+    el.menu          = $("#menu");
+    el.top           = $("#menu .top");
+    el.toggle        = $("#menu .toggle");
     
+    /**
+     * Toggle menu hamburger
+     * @param  {object} e click event
+     * @return {null}
+     */
     module.toggle = function(e){
+
+        // prevent default
         e.preventDefault();
-        DOM.links.toggleClass('show');
-        DOM.toggle.find('i').toggleClass('fa-rotate-90');
+
+        // toggle show class
+        el.links.toggleClass('show');
+
+        // rotate hamburger
+        el.toggle.find('i').toggleClass('fa-rotate-90');
+
     };
 
+    /**
+     * Initialize module
+     * @return {[type]} [description]
+     */
     module.init = function(){
         
-        DOM.toggle.on('click', module.toggle);
+        // toggle menu on click
+        el.toggle.on('click', module.toggle);
 
     };
 
@@ -27,4 +45,4 @@ var menu = (function(module){
     // return the module
     return module;
 
-})(menu || {});
+})(flowroute.menu || {});
