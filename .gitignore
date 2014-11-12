@@ -33,10 +33,10 @@ __pycache__
 database.db
 
 # Sphinx
-docs/_build
+docs/build
 
 # jsdocs
-docs/javascript
+docs/scripts
 
 # Virtual environments
 env
