@@ -10,6 +10,6 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['shell:test', 'jasmine']);
 
     // run jsdocs
-    grunt.registerTask('doc', ['jsdoc']);
+    grunt.registerTask('doc', ['shell:sphinx', 'jsdoc', 'connect:docs']);
 
 };

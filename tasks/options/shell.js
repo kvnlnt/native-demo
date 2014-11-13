@@ -10,5 +10,8 @@ module.exports = {
     },
     test:{
         command:'make test',
+    },
+    sphinx:{
+        command:'cd docs && make html'
     }
 }

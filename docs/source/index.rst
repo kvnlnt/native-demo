@@ -8,7 +8,7 @@ Welcome to flowroute.com's documentation!
 
 * :ref:`genindex`
 * :ref:`modindex`
-*  `Javascript API <../../scripts/index.html>`_
+*  `Frontend Documentation <../../scripts/index.html>`_
 
 API
 
