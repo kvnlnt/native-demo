@@ -8,8 +8,15 @@
  */
 var flowroute = {};
 
+// GLOBAL JSDOCS MARKUP
+
 /**
- * @name Backend Documentation
+ * @name 1. External Docs
  * @global
- * @description All Backend documentation is created via sphinx. {@link http://localhost:9000/build/html| Read now}
+ * @description 
+ * <ul>
+ * <li>{@link http://localhost:9000/build/html|Backend} : Backend documentation</li>
+ * <li>{@link http://jquery.com|jquery} : DOM manipulation tool</li>
+ * <li>{@link http://lodash.com|lodash} : Data manipulation tool</li>
+ * </ul>
  */
