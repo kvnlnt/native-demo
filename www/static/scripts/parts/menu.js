@@ -62,6 +62,7 @@ flowroute.menu = (function(module){
     return {
         init:init,
         toggle:toggle,
+        el:el
     };
 
 })(flowroute.menu || {});

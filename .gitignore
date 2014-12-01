@@ -13,6 +13,9 @@ eggs
 bin
 sdist
 
+# Sass
+.sass-cache/
+
 # Node Modules
 node_modules
 
