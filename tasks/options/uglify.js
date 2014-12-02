@@ -4,7 +4,7 @@ module.exports = {
             dead_code: true
         },
         preserveComments: false,
-        mangle: true,
+        mangle: false,
         sourceMap:true,
     },
     app_files: {

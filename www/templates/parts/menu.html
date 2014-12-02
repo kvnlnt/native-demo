@@ -16,7 +16,7 @@
             <div class="links">
                 <ul class="page strong">
                     <li>{{ link('.voice', 'VOICE') }}</li>
-                    <li>{{ link('.solutions', 'SOLUTIONS') }}</li>
+                    <li>{{ link('.solutions', 'SOLUTIONS', 'hasSubmenu') }}</li>
                     <li>{{ link('.pricing', 'PRICING') }}</li>
                     <li>{{ link('.developers', 'DEVELOPERS') }}</li>
                     <li>{{ link('.partners', 'PARTNERS') }}</li>
@@ -28,11 +28,13 @@
             </div>
         </div>
     </div>
+    {% if request.endpoint in ['main.solutions'] %}
     <div class="sub">
         <div class="wrapper">
             <ul>
-                <li>{{ link('.solutions', 'SOLUTIONS') }}</li>
+                <li>{{ link('.unified_communication', 'UNIFIED COMMUNICATIONS') }}</li>
             </ul>
         </div>
     </div>
+    {% endif %}
 </nav>

@@ -26,6 +26,12 @@ def solutions():
     return render_template("pages/solutions.html")
 
 
+@main.route('/solutions/unified-communications')
+def unified_communication():
+    """ unified communications page """
+    return render_template("pages/unified-communications.html")
+
+
 @main.route('/pricing')
 def pricing():
     """ pricing page """

@@ -15,7 +15,7 @@ flowroute.menu = (function(module){
      * @member flowroute.menu.el
      * @memberOf module:menu
      */
-    var el           = {};
+    var el           = module.el = {};
     el.main          = $("#menu .main");
     el.links         = $("#menu .main .links");
     el.page_links    = $("#menu .main .links .page");
@@ -23,14 +23,14 @@ flowroute.menu = (function(module){
     el.menu          = $("#menu");
     el.top           = $("#menu .top");
     el.toggle        = $("#menu .toggle");
-    
+
     /**
      * toggles menu hamburger button
      * @function flowroute.menu.toggle
      * @memberOf module:menu
      * @param  {Object} e - click event
      */
-    var toggle = function(e){
+    module.toggle = function(e){
 
         // prevent default
         e.preventDefault();
@@ -48,7 +48,7 @@ flowroute.menu = (function(module){
      * @function flowroute.menu.init
      * @memberOf module:menu
      */
-    var init = function(){
+    module.init = function(){
         
         // toggle menu on click
         el.toggle.on('click', module.toggle);
@@ -56,13 +56,9 @@ flowroute.menu = (function(module){
     };
 
     // boot file
-    $(document).on('ready', init);
+    $(document).on('ready', module.init);
 
     // export
-    return {
-        init:init,
-        toggle:toggle,
-        el:el
-    };
+    return module;
 
 })(flowroute.menu || {});
