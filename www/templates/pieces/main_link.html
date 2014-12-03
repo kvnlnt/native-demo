@@ -1,0 +1,7 @@
+{% macro main_link(endpoint, text) %}
+{% if endpoint == section %}
+    <a href="{{ url_for(endpoint) }}" class="selected {% if has_subpage %} hasSubmenu {% endif %}">{{text}} <!-- &#9660;&#9650; --></a>
+{% else %}
+	<a href="{{ url_for(endpoint) }}" class="">{{text}}</a>
+{% endif %}
+{% endmacro %}

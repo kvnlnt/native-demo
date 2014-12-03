@@ -8,7 +8,7 @@
         width: 50px;
         margin: 1.5rem;
         border: 0;
-        color:$white;
+        color: $white;
     }
     .top {
         background-color: #000000;
@@ -62,16 +62,15 @@
             overflow: hidden;
             visibility: hidden;
             max-height: 0;
-            margin:0;
+            margin: 0;
             display: block;
-            width:100%;
+            width: 100%;
             &.show {
                 overflow: auto;
                 visibility: visible;
                 max-height: 1000px;
                 -webkit-transition: visibility 0.35s, max-height 0.35s ease-in;
                 transition: visibility 0.35s, max-height 0.35s ease-in;
-                
             }
             .page {
                 margin: 0;
@@ -94,6 +93,9 @@
                             background-color: #2c2c2c;
                             transition: background-color 0.5s ease;
                         }
+                        // &.hasSubmenu:after {
+                        //      content: " \25BC"; // \25B2 is up arrow
+                        // }
                     }
                 }
             }
@@ -115,7 +117,6 @@
                         text-align: center;
                         margin: 1.80rem 0.75rem 0;
                         border-radius: 4px;
-
                         &.login {
                             border: 3px solid $gray;
                             padding: 0.75rem 1.5rem;
@@ -127,9 +128,8 @@
                                 transition: background-color 1s ease;
                             }
                         }
-
                         &.signup {
-                            margin-bottom:1rem;
+                            margin-bottom: 1rem;
                             border: 3px solid $white;
                             padding: 0.75rem 1.5rem;
                             &:hover {
@@ -138,7 +138,6 @@
                                 transition: background-color 0.25s ease;
                             }
                         }
-
                     }
                 }
             }
@@ -150,26 +149,26 @@
         line-height: 2rem;
         .wrapper {
             max-width: $tablet-width;
-            margin:0 auto;
+            margin: 0 auto;
         }
         ul {
-            margin:0;
-            padding:0;
+            margin: 0;
+            padding: 0;
             list-style: none;
             text-align: center;
             a {
-                display:block;
-                line-height:5rem;
-                color:$blue_light;
+                display: block;
+                line-height: 5rem;
+                color: $blue_light;
                 text-decoration: none;
                 text-transform: uppercase;
                 &:hover {
-                    color:$white;
+                    color: $white;
                     -webkit-transition: color 0.35s ease-in;
                     transition: color 0.35s ease-in;
                 }
                 &.active {
-                    color:$white;
+                    color: $white;
                 }
             }
         }

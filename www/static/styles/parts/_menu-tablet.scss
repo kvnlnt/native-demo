@@ -48,6 +48,7 @@
                         }
                         &.hasSubmenu:after {
                             border-bottom: 10px solid $blue_dark;
+                            content: " &#9660;";
                         }
                     }
                 }

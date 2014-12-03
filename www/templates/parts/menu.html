@@ -1,4 +1,7 @@
 {% from "pieces/link.html" import link with context %}
+{% from "pieces/main_link.html" import main_link with context %}
+
+
 <nav id="menu">
     <div class="top">
         <div class="wrapper">
@@ -15,11 +18,11 @@
             <a href="/"><h1>Flowroute Inc.</h1></a>
             <div class="links">
                 <ul class="page strong">
-                    <li>{{ link('.voice', 'VOICE') }}</li>
-                    <li>{{ link('.solutions', 'SOLUTIONS', 'hasSubmenu') }}</li>
-                    <li>{{ link('.pricing', 'PRICING') }}</li>
-                    <li>{{ link('.developers', 'DEVELOPERS') }}</li>
-                    <li>{{ link('.partners', 'PARTNERS') }}</li>
+                    <li>{{ main_link('.voice', 'VOICE') }}</li>
+                    <li>{{ main_link('.solutions', 'SOLUTIONS') }} </li>
+                    <li>{{ main_link('.pricing', 'PRICING') }}</li>
+                    <li>{{ main_link('.developers', 'DEVELOPERS') }}</li>
+                    <li>{{ main_link('.partners', 'PARTNERS') }}</li>
                 </ul>
                 <ul class="account">
                     <li><a href="/login" class="login">LOGIN</a></li>
@@ -28,11 +31,13 @@
             </div>
         </div>
     </div>
-    {% if request.endpoint in ['main.solutions'] %}
+    {% if section == ".solutions" %}
     <div class="sub">
         <div class="wrapper">
             <ul>
                 <li>{{ link('.unified_communication', 'UNIFIED COMMUNICATIONS') }}</li>
+                <li>{{ link('.call_center', 'CALL CENTER') }}</li>
+                <li>{{ link('.pbx_and_phone_systems', 'PBX & PHONE SYSYEMS') }}</li>
             </ul>
         </div>
     </div>
