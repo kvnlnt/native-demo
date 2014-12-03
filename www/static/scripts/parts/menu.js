@@ -23,6 +23,7 @@ flowroute.menu = (function(module){
     el.menu          = $("#menu");
     el.top           = $("#menu .top");
     el.toggle        = $("#menu .toggle");
+    el.toggle_sub    = $("#menu .toggle-sub");
 
     /**
      * toggles menu hamburger button
@@ -44,6 +45,31 @@ flowroute.menu = (function(module){
     };
 
     /**
+     * toggles submenus dropwdown button
+     * @function flowroute.menu.toggle
+     * @memberOf module:menu
+     * @param  {Object} e - click event
+     */
+    module.toggle_sub = function(e){
+
+        // prevent default
+        e.preventDefault();
+
+        // get element
+        var element = $(e.target);
+
+        // get submenu
+        var submenu = element.siblings('.sub');
+
+        // toggle show class
+        submenu.toggleClass('show');
+
+        // rotate hamburger
+        element.find('i').toggleClass('fa-rotate-270');
+
+    };
+
+    /**
      * Initialize module
      * @function flowroute.menu.init
      * @memberOf module:menu
@@ -52,6 +78,7 @@ flowroute.menu = (function(module){
         
         // toggle menu on click
         el.toggle.on('click', module.toggle);
+        el.toggle_sub.on('click', module.toggle_sub);
 
     };
 
