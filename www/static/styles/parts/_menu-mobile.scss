@@ -99,6 +99,10 @@
                 display: block;
                 padding:0;
                 background-color: $gray_dark;
+                ul {
+                    margin:0;
+                    padding:0;
+                }
                 &.show {
                     overflow: auto;
                     visibility: visible;
