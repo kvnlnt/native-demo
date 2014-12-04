@@ -86,6 +86,15 @@ def partners():
     )
 
 
+@main.route('/patterns')
+def patterns():
+    """ patterns page """
+    return render_template(
+        "pages/patterns.html",
+        section=".patterns", has_subpage=False
+    )
+
+
 @main.route('/login')
 def login():
     """ login page """

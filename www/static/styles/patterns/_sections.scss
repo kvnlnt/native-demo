@@ -1,0 +1,17 @@
+section {
+    > .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        @include mq(mobile) {
+            padding: 5px;
+        }
+        @include mq(tablet) {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+    background: $gray_light;
+    &:nth-child(even) {
+        background: darken($gray_light, 5%)
+    }
+}

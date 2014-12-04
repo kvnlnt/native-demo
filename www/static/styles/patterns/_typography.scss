@@ -15,7 +15,7 @@ html, body {
 h1, .h1 {
     font-size: 4.2rem;
     line-height: 4.5rem;
-    color:#00626C;
+    color:$blue_dark;
     font-family: 'ProximaNova-Light', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
     margin:0;
     padding:0;
@@ -24,16 +24,36 @@ h1, .h1 {
 h2, .h2 {
     font-size: 3.6rem;
     line-height: 4rem;
-    color:#373737;
+    color:$gray;
+    margin:0;
+    padding:0;
 }
 
 h3, .h3 {
     font-size: 2.4rem;
     line-height: 6rem;
-    color:#00c3d7;
+    color:$blue;
     font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    margin:0;
+    padding:0;
+}
+
+h4, .h4 {
+    font-size: 2.0rem;
+    line-height: 3rem;
+    color:$gray;
+    font-family: 'ProximaNova-Regular', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    margin:0;
+    padding:0;
 }
 
 strong, .strong {
     font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+}
+
+blockquote, .blockquote {
+    font-size: 2.4rem;
+    color: $blue;
+    font-family: 'ProximaNova-Light', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    text-align: center;
 }
