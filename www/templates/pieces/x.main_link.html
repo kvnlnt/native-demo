@@ -1,8 +1,0 @@
-{% macro main_link(endpoint, text, hasSubmenu=False) %}
-    {% if hasSubmenu %}<button class="toggle-sub"><i class="fa fa-caret-left"></i></button>{% endif %}
-{% if endpoint == section %}
-    <a href="{{ url_for(endpoint) }}" class="selected {% if hasSubmenu %} hasSubmenu {% endif %}">{{text}}</a>
-{% else %}
-	<a href="{{ url_for(endpoint) }}" class="">{{text}}</a>
-{% endif %}
-{% endmacro %}
