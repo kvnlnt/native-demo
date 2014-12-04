@@ -11,16 +11,16 @@
             margin:0 auto;
         }
         .links {
-            margin-right:3rem;
+            @include rem(margin-right, 3);
         }
     }
     .main {
         .wrapper {
             max-width: $tablet-width;
             margin: 0 auto ;
-            height: 7.5rem;
+            @include rem(height,7.5);
             &.tablet_submenu {
-                margin-bottom:5rem;
+                @include rem(margin-bottom,5);
             }
         }
         .links {
@@ -37,9 +37,9 @@
                     position:relative;
                     a {
                         display: inline-block;
-                        height:7.5rem;
-                        line-height: 7.5rem;
-                        padding:0 3rem;
+                        @include rem(height,7.5);
+                        @include rem(line-height,7.5);
+                        @include rem(padding,0,3);
                         &.selected:after {
                             content:"";
                             width: 0; 
@@ -60,20 +60,20 @@
                     .sub {
                         background-color: $blue_dark;
                         left:0;
-                        max-height: 5rem;
+                        @include rem(max-height,5);
                         position: fixed;
-                        top:11rem;
+                        @include rem(top,11);
                         visibility: visible;
                         width:100%;
                         ul {
-                            height: 5rem;
+                            @include rem(height,5);
                             text-align: left;
                             max-width: $tablet-width;
                             margin:0 auto;
                             li {
                                 display: inline-block;
                                 a {
-                                    line-height: 5rem;
+                                    @include rem(line-height,5);
                                 }
                             }
                         }

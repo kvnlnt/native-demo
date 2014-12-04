@@ -1,7 +1,7 @@
 #header {
 
     background-color: $blue;
-    padding:2rem;
+    @include rem(padding,2);
 
     .wrapper {
          max-width: $tablet-width;
@@ -14,20 +14,20 @@
 
     .desc {
         color: $white;
-        font-size: 1.2rem;
+        @include rem(font-size,1.2);
         max-width: 400px;
     }
 
     @include mq(mobile) {
         h1 {
-            font-size:3rem;
+            @include rem(font-size,3);
             text-align: center;
         }
     }
 
     @include mq(mobile-landscape) {
         h1 {
-            font-size:4.2rem;
+            @include rem(font-size,4.2);
             text-align: left;
             max-width: $tablet-width;
             margin:0 auto;

@@ -1,14 +1,16 @@
 .btn {
-    font-size: 1.6rem;
-    line-height: 4rem;
-    padding:0 1.5rem;
+    @include rem(font-size,1.6);
+    @include rem(line-height,4);
+    @include rem(padding,0,1.5);
     text-decoration: none;
-    background-color: #FF6e19;
+    background-color: $orange;
     display: inline-block;
     border-radius: 4px;
     color: #FFFFFF;
     font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
-    border-bottom: 0.4rem solid #eb6819;
+    @include rem(border-bottom, 0.4);
+    border-bottom-style:solid;
+    border-bottom-color:darken($orange,5%);
 }
 
 .btn:hover {

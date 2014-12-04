@@ -1,18 +1,18 @@
 @include mq(mobile) {
     .toggle {
         background-color: transparent;
-        font-size: 3rem;
+        @include rem(font-size,3);
         display: block;
         float: right;
         height: 50px;
         width: 50px;
-        margin: 1.5rem;
+        @include rem(margin, 1.5);
         border: 0;
         color: $white;
     }
     .toggle-sub {
         background-color: transparent;
-        font-size: 3rem;
+        @include rem(font-size,3);
         display: block;
         float: right;
         height: 50px;
@@ -38,16 +38,16 @@
             margin: 0 auto;
             padding: 0;
             text-align: center;
-            font-size: 1.2rem;
+            @include rem(font-size,1.2);
         }
         li {
             list-style: none;
             display: inline-block;
-            margin: 0 0 0 1rem;
+            @include rem(margin, 0,0,0,1);
             padding: 0;
             a {
                 color: $white;
-                line-height: 3.5rem;
+                @include rem(line-height, 3.5);
                 text-decoration: none;
                 &:hover {
                     color: $gray_light;
@@ -63,7 +63,7 @@
             margin: 0 auto;
         }
         h1 {
-            margin: 1.5rem;
+            @include rem(margin,1.5);
             padding: 0;
             text-indent: -999999px;
             background-image: url(images/flowroute-logo_154x40.png);
@@ -120,8 +120,8 @@
                 a {
                     display: block;
                     color: $white;
-                    line-height: 5rem;
-                    font-size: 1.2rem;
+                    @include rem(line-height,5);
+                    @include rem(font-size,1.2);
                     text-decoration: none;
                     margin: 0;
                     text-align: center;

@@ -2,7 +2,7 @@
 
     .top {
         .wrapper {
-            margin: 0 1rem;
+            @include rem(margin, 0, 1);
         }
         ul {
             text-align:right;

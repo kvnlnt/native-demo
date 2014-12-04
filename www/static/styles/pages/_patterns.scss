@@ -2,19 +2,19 @@
 
     @include mq(mobile) {
         h1 {
-            font-size:1rem;
+            @include rem(font-size,1);
         }
     }
 
     @include mq(mobile-landscape) {
         h1 {
-            font-size:2rem;
+            @include rem(font-size,2);
         }
     }
  
     @include mq(tablet) {
         h1 {
-            font-size:3rem;
+            @include rem(font-size,3);
         }
     }
 
