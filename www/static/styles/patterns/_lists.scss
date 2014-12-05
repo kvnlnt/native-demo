@@ -1,0 +1,34 @@
+ul{
+	padding: 0px;
+}
+
+.rate {
+    @include rem(border-bottom, 0.2);
+    @include rem(border-radius,0.2);
+    @include rem(font-size,1);
+    @include rem(line-height,4);
+    @include rem(padding,0,2);
+    //border-bottom-style:solid;
+    display: inline-block;
+    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    text-decoration: none;
+    background-color: $gray_med;
+    //border-bottom-color:darken($gray,5%);
+    color: $gray;
+
+    .name {
+
+    }
+
+    .value {
+        color: $blue;
+    }
+
+    .unit {
+        color: $white;
+    }
+
+    .unit:before{
+        content: "/";
+    }
+}

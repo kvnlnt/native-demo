@@ -1,19 +1,39 @@
 .btn {
+    @include rem(border-bottom, 0.4);
+    @include rem(border-radius,0.4);
     @include rem(font-size,1.6);
     @include rem(line-height,4);
     @include rem(padding,0,1.5);
-    text-decoration: none;
-    background-color: $orange;
-    display: inline-block;
-    border-radius: 4px;
-    color: #FFFFFF;
-    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
-    @include rem(border-bottom, 0.4);
     border-bottom-style:solid;
-    border-bottom-color:darken($orange,5%);
+    display: inline-block;
+    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    text-decoration: none;
+    background-color: $blue;
+    border-bottom-color:darken($blue,5%);
+    color: $white;
+
+    &:hover {
+        background-color:lighten($blue,5%);
+        transition: background-color 0.5s ease;    
+    }
+
+    
+
+    &.cta {
+        background-color: $orange;
+        border-bottom-color:darken($orange,5%);
+        color: $white;
+
+        &:hover {
+            background-color:lighten($orange,5%);
+            transition: background-color 0.5s ease;    
+        }
+    }
+
+    &.large {
+        @include rem(font-size,2);
+        @include rem(line-height,5);
+        @include rem(padding,0,2);
+    }
 }
 
-.btn:hover {
-    background-color: #ff8b47;
-    transition: background-color 0.5s ease;    
-}
