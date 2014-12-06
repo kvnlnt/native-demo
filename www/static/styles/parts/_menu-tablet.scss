@@ -34,34 +34,33 @@
                     display: inline-block;
                     width: auto;
                     font-size: 0;
-                    position:relative;
+                    position:static;
                     a {
                         display: inline-block;
                         @include rem(height,7.5);
                         @include rem(line-height,7.5);
                         @include rem(padding,0,3);
                         &.selected:after {
-                            content:"";
-                            width: 0; 
-                            height: 0; 
+                            content: "";
+                            width: 0;
+                            height: 0;
                             border-left: 10px solid transparent;
                             border-right: 10px solid transparent;
                             border-bottom: 10px solid $blue;
-                            position: absolute;
-                            bottom:0;
-                            left:50%;
-                            margin:0 0 0 -10px;
+                            position: relative;
+                            top: 30%;
+                            left: -50%;
+                            margin: -10px;
                         }
-                        &.hasSubmenu:after {
+                        &.has_submenu:after {
                             border-bottom: 10px solid $blue_dark;
-                            content: " &#9660;";
                         }
                     }
                     .sub {
                         background-color: $blue_dark;
                         left:0;
                         @include rem(max-height,5);
-                        position: fixed;
+                        position: absolute;
                         @include rem(top,11);
                         visibility: visible;
                         width:100%;

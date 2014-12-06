@@ -67,7 +67,7 @@ flowroute.menu = (function(module){
         // rotate hamburger
         element.find('i').toggleClass('fa-rotate-270');
 
-    };
+    };    
 
     /**
      * Initialize module
