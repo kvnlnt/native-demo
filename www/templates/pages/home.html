@@ -5,91 +5,9 @@ Flowroute Inc.
 {% endblock %}
 
 {% block body %}
-<section class="hero">
-    <div class="wrapper">
-    <h1>Intelligent Communications<br/>empowering modern business</h1>
-    <h3>Enterprise SIP trunking you control</h3>
-    <a href="" class="btn cta">Sign up CTA</a>
-    <a href="" class="btn cta large">Sign up MORE</a>
-</div>
-</section>
+{% include 'parts/heros/intelligent_communications.html' %}
+{% include 'parts/what_we_deliver.html' %}
+{% include 'parts/case_studies.html' %}
+{% include 'parts/how_we_standout.html' %}
 
-<section>
-    <div class="wrapper">
-	<h2>NOT Newscast</h2>
-</div>
-</section>
-
-<section>
-    <div class="wrapper">
-	<h2>What we deliver:</h2>
-
-<h3>Inbound calling</h3>
-<img src="{{ url_for('static',filename='assets/images/inbound_2x.png') }}" class="section-image">
-
-Detailed routing intelligence provides granular control of your SIP trunking. Choose unlimited channels, or unlimited minutes, for each phone number company wide.
-
-<h3>Outbound calling</h3>
-<img src="{{ url_for('static',filename='assets/images/outbound_2x.png') }}" class="section-image">
-
-Call quality is optimized over the most reliable routes available and by removing unnecessary call legs. Outbound SIP trunking channels are always unlimited.
-
-
-<h3>Local phone numbers</h3>
-<img src="{{ url_for('static',filename='assets/images/phonenumber_2x.png') }}" class="section-image">
-
-Purchase or port in local phone numbers from more than 17,000 rate centers across the US and Canada. Specify a unique rate plan for each number. 
-
-<h3>Toll-free numbers</h3>
-<img src="{{ url_for('static',filename='assets/images/toll-free_2x.png') }}" class="section-image">
-
-Choose from a wide range of US/CAN toll-free numbers, or special order vanity numbers, with the click of a button. Port existing toll-free numbers to Flowroute free of charge.
-
-<h3>Toll-fraud protection</h3>
-<img src="{{ url_for('static',filename='assets/images/toll-fraud_2x.png') }}" class="section-image">
-
-Keep your balance safe from intruders with real-time customizable toll-fraud protections. Restrict destinations, limit rates, block external IPs, and more from your account manager.
-
-<h3>Additional Services</h3>
-<img src="{{ url_for('static',filename='assets/images/additional_2x.png') }}" class="section-image">
-
-CNAM Storage - Boost call answer rates.
-CNAM Lookup - Enable personalized greetings. 
-E911 - The largest E911 coverage in the US and Canada.
-
-</div>
-</section>
-
-<section class="blue_back"> 
-    <div class="wrapper">
-	<h2>Case studies</h2>
-	<img src="{{ url_for('static',filename='assets/images/casestudy_2x.png') }}" class="section-image">
-</div>
-</section>
-
-<section>
-    <div class="wrapper">
-	<h2>How we standout:</h2>
-	<p>
-	Flowroute is the world’s leading high-performance telecommunications service. Once you configure your system, you can count on us to keep your enterprise phone lines clear, open, and responsive to your needs. 
-
-	Communications control:
-
-	Expanded SIP signalling puts you in command of your phone service so you can route calls more intelligently and efficiently. Comprehensive Call Detail Records equip you with to-the-second usage data for planning and reporting. 
-
-	Serious reliability:
-
-	Our intelligent VoIP service platform finds optimal call routes to maximize quality and uptime. By delivering call audio directly to destination carriers, we eliminate quality issues that plague other services. With unlimited channels, you never have to worry about traffic capacity again.
-
-	Hands-on support:
-
-	Flowroute SIP trunking service is backed by our team of highly trained support engineers available on the phone or by email, 24/7. Our engineers understand your entire network environment and will work with you beyond the boundaries of our service without pointing fingers. 
-
-	Current support resolution satisfaction: 96%
-
-	[[Sign up]]
-
-	</p>
-</div>
-</section>
 {% endblock %}
