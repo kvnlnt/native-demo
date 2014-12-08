@@ -28,6 +28,9 @@
             width: ($tablet-width - 200);
             visibility: visible;
             max-height: 1000px;
+            &.show {
+                overflow: hidden;
+            }
             .page {
                 display: inline-block;
                 li {
@@ -64,6 +67,7 @@
                         @include rem(top,11);
                         visibility: visible;
                         width:100%;
+                        overflow: hidden;
                         ul {
                             @include rem(height,5);
                             text-align: left;

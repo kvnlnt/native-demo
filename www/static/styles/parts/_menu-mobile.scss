@@ -85,7 +85,7 @@
                 padding:0;
             }
             &.show {
-                overflow: auto;
+                overflow: hidden;
                 visibility: visible;
                 max-height: 1000px;
                 -webkit-transition: visibility 0.35s, max-height 0.35s ease-in;
@@ -104,7 +104,7 @@
                     padding:0;
                 }
                 &.show {
-                    overflow: auto;
+                    overflow: hidden;
                     visibility: visible;
                     max-height: 1000px;
                     -webkit-transition: visibility 0.35s, max-height 0.35s ease-in;
