@@ -92,8 +92,10 @@
                 li {
                     display: inline-block;
                     width: auto;
+                    @include rem(padding, 1.25rem, 0);
                     a {
                         display: inline-block;
+                        @include rem(padding, 0, 1rem);
                     }
                 }
             }
