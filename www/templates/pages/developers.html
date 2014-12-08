@@ -1,45 +1,11 @@
-{% extends "template.html" %} {% block title %} Flowroute Inc. Developers {% endblock %} {% block body %}
-<section class="hero">
-    <div class="wrapper">
-        <h1>Give your apps intelligent voice</h1>
+{% extends "template.html" %}
+{% block title %} 
+Flowroute Inc. Developers
+{% endblock %}
+{% block body %}
 
-        <p>
-            To realize your vision, you need advanced data and granular control of voice functionality like routing and number provisioning. On top of that, you need an easy-to-integrate voice connection that can scale with your user-base. Flowroute SIP trunking delivers the detailed access and control you need to develop robust applications that interop with modern communications technology. We remove the barriers that stand in the way of growth with a scalable connection built from the ground up for quality, reliability and flexibility. “Switching from Twilio to Flowroute made our application viable.” Mark, Co-founder
-        </p>
-    </div>
-</section>
+{% include 'parts/heros/developers.html' %}
+{% include 'parts/developer_features.html' %}
+{% include 'parts/voip_api.html' %}
 
-<section>
-    <div class="wrapper">
-        <h2>The Flowroute features applications need:</h2>
-        <p>
-            Developers use Flowroute because they know our voice service works, and features built into our system make integration simple and rewarding.
-        </p>
-        <h4>Intelligent SIP signaling:</h4>
-        <p>
-            Flowroute SIP packets deliver extended signaling that enables advanced features and detailed call tracking. CDRs can be exported with up-to-the-second accuracy for records and usage analysis.
-        </p>
-        [SIP packet goes here]
-
-
-        <h4>Real-time control:</h4>
-        <p>
-            With Flowroute’s web-based Account manager, you can be up and running in minutes. And we pass direct phone network access on to you for instant activation of numbers, features, and advanced routing control.
-        </p>
-
-        <h4>Unlimited capacity: </h4>
-        <p>
-            Flowroute call channels scale instantly with your capacity needs. No negotiations, contracts, or bounced calls.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="wrapper">
-        <h2>VoIP API</h2>
-        <p>
-            The Flowroute API will allow you to quickly program voice services into your applications. Check your balance to measure usage and network access availability. Stay up-to-date on spending and manage budgets automatically. Automatically set up numbers as needed through pre-programmed parameters add, drop, and route single phone numbers or whole blocks Stay tuned for the release of our intuitive, extensible, and RESTful API.
-        </p>
-    </div>
-</section>
 {% endblock %}

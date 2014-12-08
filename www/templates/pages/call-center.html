@@ -1,62 +1,14 @@
-{% extends "template.html" %} {% block title %} Call Center {% endblock %} {% block body %}
-<section class="hero">
-    <div class="wrapper">
-        <h1>Contact Center Calling Solutions</h1>
-    </div>
-</section>
-<section>
-    <div class="wrapper">
-        <p>
-            Responsiveness is crucial to modern customer experience management. As you integrate more communications tools and implement CTI, agents are no longer confined to one location. Volumes fluctuate but bottlenecks and dropped calls are as unacceptable as overspending on channels. Flowroute is the highly-reliable, scale on-demand VoIP service you need to ensure CSRs are available for every call. Advanced SIP packets deliver the data you need to manage your queue and your workforce. Audio transmission is streamlined to optimize customer experience with high-quality audio.
-        </p>
-    </div>
-</section>
+{% extends "template.html" %}
+{% block title %} 
+Call Center 
+{% endblock %} 
+{% block body %}
 
-<section>
-    <div class="wrapper">
-        <p>
-            Reliability that isn’t expensive Qualified contact centers receive volume rate discounts. Submit your usage stats to discover your discount. [[Calculate ROI]]
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="wrapper">
-        <h2>The Flowroute advantage</h2>
-        <p>“We don’t even think about Flowroute. Set it up and you’re done.” - Adam, Project Manager Flowroute's intuitive, web-based Account Manager gives you access to burstable cloud-based telephone service that delivers the power of real-time call records, detailed cost accounting, granular control, and premium quality audio. And with the reliability built into our platform, contact centers forget we’re even there.</p>
-
-        <h4>Reliability and quality: </h4>
-        <p>As the first natively IP voice service provider that is officially a nationwide carrier, Flowroute is directly tied into the telephone network. That means your calls traverse the most stable path possible in and out of your system.</p>
-        <p>
-
-            <h4>Flexibility and control: </h4>
-            <p>Configure and deploy Flowroute SIP trunking in minutes. Add new seats knowing line capacity won’t stand in your way. Activate new local or toll-free numbers instantly. Use our advanced SIP signaling to route calls more contextually and seamlessly integrate voice into your contact center platform.</p>
-
-            <h4>Call data tracking:</h4>
-            <p>Track which numbers are being called most, from where, and when. Collect and access workforce management data in real time. Monitor usage to the minute with granular call detail records.</p>
-            [[Sign up]]
-    </div>
-</section>
-<section>
-    <div class="wrapper">
-        <p>SIDEBAR: Flowroute in action: When USA Contact Point started receiving complaints that calls weren’t getting through, they found a solution by switching to Flowroute.</p> [[Read more]]
-
-    </div>
-</section>
-<section>
-    <div class="wrapper">
-        <h2>Flowroute features for contact centers: </h2>
-        <p>Flowroute is built to provide the highest availability possible. Our Account Manager empowers you with the ability to establish and manage voice services instantly.</p>
-
-        <h4>Unlimited SIP trunking capacity:</h4>
-        <p>Unlimited call channels in and out of your cloud or premised-based system makes your phone service instantly scalable to onboard new agents and capacity without preparation. Connect every call - channel limits no longer block calls Add CSRs without expanding your service commitment Eliminate overspending on unused capacity Reduce infrastructure investment</p>
-        <h4>Intelligent SIP trunking:</h4>
-        <p>Flowroute delivers meaningful intelligence with every single call. The rich data in Flowroute SIP packets empowers personalization, real-time workflow and resource optimization, and enables custom feature functionality at no additional cost. Advanced SIP headers: X-tag: Add custom labels to your CDRs for easier call identification and management. P-Asserted-Identity: Customize Caller ID on outbound calls. Private and restricted caller IDs are passed on inbound toll-free calls. Diversion: Meaningful in call routing and delivery logic for IVR systems.</p>
-
-        <h4>Instant activation:</h4>
-        <p>With no contracts or minimums, our proven carrier platform is instantly responsive to your business needs. Your calls can be transiting our network in less than 2 minutes from now. Flowroute offers local phone numbers nationwide in the USA and Canada. Adding numbers is quick and easy, and you can start using them right away. Set preconfigured failover, or adjust routing at any time with immediate effect.</p>
-    </div>
-</section>
-
+{% include 'parts/heros/call_center.html' %}
+{% include 'parts/responsiveness.html' %}
+{% include 'parts/reliability.html' %}
+{% include 'parts/the_flowroute_advantage/quality_control_tracking.html' %}
+{% include 'parts/flowroute_in_action/usa_contact_point.html' %}
+{% include 'parts/contact_center_features.html' %}
 
 {% endblock %}

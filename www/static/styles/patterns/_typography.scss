@@ -49,6 +49,8 @@ h4, .h4 {
 
 p, .p {
     @include rem(font-size, 1.6);
+    margin:0;
+    padding:1.6rem;
 }
 
 strong, .strong {
@@ -60,4 +62,6 @@ blockquote, .blockquote {
     color: $blue;
     font-family: 'ProximaNova-Light', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
     text-align: center;
+    margin:0;
+    padding:0;
 }
