@@ -15,7 +15,7 @@ flowroute.images = (function(module){
      * @member flowroute.images.el
      * @memberOf module:images
      */
-    module.directive = 'img.responsive';
+    module.directive = '[fr-image]';
 
     /**
      * Replace all svg images with png counterparts
@@ -23,12 +23,13 @@ flowroute.images = (function(module){
      * @memberOf module:images
      * @param  {Object} e - click event
      */
-    module.svg_fallback = function(){
+    module.degrade_svg = function(){
 
         // get clicked element
         var el = $(this);
-
-        console.log(el);
+        var src = el.attr('src');
+        var newsrc = src.replace('.svg','.png');
+        el.attr('src', newsrc);
 
     };
 
@@ -39,8 +40,10 @@ flowroute.images = (function(module){
      */
     module.init = function(){
         
-        // register each element
-        $(module.directive).each(module.svg_fallback);
+        // Fix svg images
+        if(!Modernizr.svg){
+            $(module.directive).each(module.degrade_svg);
+        }
 
     };
 
