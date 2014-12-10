@@ -4,9 +4,9 @@
  * @version 1.0
  */
 
-"use strict";
-
 flowroute.parts = (function(module) {
+
+    "use strict";
 
     /** @exports parts  */
 
@@ -26,10 +26,10 @@ flowroute.parts = (function(module) {
 
     /**
      * On view event
-     * @function floworoute.parts.on_scroll
+     * @function floworoute.parts.mark_viewed
      * @memberOf module:parts
      */
-    module.on_view = function(el) {
+    module.mark_viewed = function(el) {
 
         // get part
         var part = $(el);
@@ -49,7 +49,7 @@ flowroute.parts = (function(module) {
 
     /**
      * Get parts in view port
-     * @function floworoute.parts.viewport_check_all
+     * @function floworoute.parts.track_views
      * @memberOf module:parts
      */
     module.track_views = function(viewClass) {
@@ -60,7 +60,7 @@ flowroute.parts = (function(module) {
         // get all parts in view and mark them viewed
         unviewed.each(function(k, v){
             var is_being_viewed = flowroute.viewport.contains_part(v);
-            if(is_being_viewed){ module.on_view(v); }
+            if(is_being_viewed){ module.mark_viewed(v); }
         });
 
         return unviewed;
