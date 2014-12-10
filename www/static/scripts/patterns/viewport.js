@@ -33,17 +33,31 @@ flowroute.viewport = (function(module){
     module.set_viewport = function(){
 
         // viewport, height and vertical scroll position
-        var viewport = $(window);
+        var viewport    = $(window);
         module.height   = viewport.height();
         module.top      = viewport.scrollTop();
         module.bottom   = module.top + module.height;
+
+        // publish scroll event
+        flowroute.pubsub.publish('VIEWPORT:SCROLL');
 
         return module;
 
     };
 
+    /**
+     * Initialize
+     * @memberOf module:viewport
+     */
+    module.init = function(){
+
+        $(document).on('scroll', flowroute.util.debounce(module.set_viewport, 100));
+        module.set_viewport();
+
+    };
+
     // boot file
-    $(document).on('ready scroll', module.set_viewport);
+    $(document).on('ready', module.init);
 
     // export
     return module;

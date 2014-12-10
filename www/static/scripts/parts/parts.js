@@ -1,12 +1,12 @@
 /**
-* All Parts
-* @module parts
-* @version 1.0
-*/
+ * All Parts
+ * @module parts
+ * @version 1.0
+ */
 
 "use strict";
 
-flowroute.parts = (function(module){
+flowroute.parts = (function(module) {
 
     /** @exports parts  */
 
@@ -25,25 +25,11 @@ flowroute.parts = (function(module){
     module.parts = [];
 
     /**
-     * On scroll event
-     * @function floworoute.parts.on_scroll
-     * @memberOf module:parts
-     */
-    module.on_scroll = function(){
-
-        // loop all views in viewport and call on view method
-        module.in_viewport().each(function(index, el){
-            module.on_view(el);
-        });
-
-    };
-
-    /**
      * On view event
      * @function floworoute.parts.on_scroll
      * @memberOf module:parts
      */
-    module.on_view = function(el){
+    module.on_view = function(el) {
 
         // get part
         var part = $(el);
@@ -52,11 +38,11 @@ flowroute.parts = (function(module){
         var been_viewed = part.hasClass('viewed');
 
         // no? add a class and call methods
-        if(!been_viewed){
+        if (!been_viewed) {
             part.addClass('viewed');
-            flowroute.analytics.log('part','viewed',part);
+            flowroute.analytics.log('part', 'viewed', part);
         }
-        
+
         return part;
 
     };
@@ -66,14 +52,18 @@ flowroute.parts = (function(module){
      * @function floworoute.parts.viewport_check_all
      * @memberOf module:parts
      */
-    module.in_viewport = function(classIndicator){
+    module.track_views = function(viewClass) {
 
-        var classIndicator = 'viewed' || classIndicator;
+        var viewClass = '.viewed' || viewClass;
+        var unviewed = module.parts.not(viewClass);
 
-        // Loop parts that have not been viewed and check if they're in the viewport
-        return module.parts.not(classIndicator).filter(function(i){
-            return flowroute.viewport.contains_part(module.parts[i]); 
+        // get all parts in view and mark them viewed
+        unviewed.each(function(k, v){
+            var is_being_viewed = flowroute.viewport.contains_part(v);
+            if(is_being_viewed){ module.on_view(v); }
         });
+
+        return unviewed;
 
     };
 
@@ -82,13 +72,16 @@ flowroute.parts = (function(module){
      * @function floworoute.parts.init
      * @memberOf module:parts
      */
-    module.init = function(){
+    module.init = function() {
 
         // collect parts
         module.parts = $(module.directive);
-        
+
         // register wow parts
-        $(document).on('scroll', module.on_scroll);
+        flowroute.pubsub.subscribe('VIEWPORT:SCROLL', module.track_views);
+
+        // call manually on init
+        module.track_views();
 
     };
 
