@@ -11,6 +11,17 @@ flowroute.analytics = (function(module){
     /** @exports analytics  */
 
     /**
+     * Log event
+     * @function floworoute.analytics.init
+     * @memberOf module:analytics
+     */
+    module.log = function(type, evt, data){
+        
+        // console.log('analytics', type, evt, data);
+
+    };
+
+    /**
      * Initialize module
      * @function floworoute.analytics.init
      * @memberOf module:analytics

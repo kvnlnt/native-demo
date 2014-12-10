@@ -31,14 +31,33 @@ flowroute.parts = (function(module){
      */
     module.on_scroll = function(){
 
-        // check if in viewport
-        module.in_viewport().each(module.set_viewed);
+        // loop all views in viewport and call on view method
+        module.in_viewport().each(function(index, el){
+            module.on_view(el);
+        });
 
     };
 
-    module.set_viewed = function(v, k){
+    /**
+     * On view event
+     * @function floworoute.parts.on_scroll
+     * @memberOf module:parts
+     */
+    module.on_view = function(el){
 
-        console.log(v,k);
+        // get part
+        var part = $(el);
+
+        // has it been viewed?
+        var been_viewed = part.hasClass('viewed');
+
+        // no? add a class and call methods
+        if(!been_viewed){
+            part.addClass('viewed');
+            flowroute.analytics.log('part','viewed',part);
+        }
+        
+        return part;
 
     };
 
@@ -47,30 +66,14 @@ flowroute.parts = (function(module){
      * @function floworoute.parts.viewport_check_all
      * @memberOf module:parts
      */
-    module.in_viewport = function(){
+    module.in_viewport = function(classIndicator){
 
-        // check if in viewport
-        var in_view = module.parts.filter(function(i){
-            return module.is_viewable(module.parts[i]); 
+        var classIndicator = 'viewed' || classIndicator;
+
+        // Loop parts that have not been viewed and check if they're in the viewport
+        return module.parts.not(classIndicator).filter(function(i){
+            return flowroute.viewport.contains_part(module.parts[i]); 
         });
-        return in_view;
-
-    };
-
-    /**
-     * Check if part is in viewport
-     * @function floworoute.parts.viewport_check
-     * @memberOf module:parts
-     */
-    module.is_viewable = function(el){
-
-        // get params
-        var viewport = flowroute.viewport;
-        var part     = $(el);
-        var top      = part.offset().top;
-        var in_view  = top >= viewport.top && top <= viewport.bottom;
-
-        return in_view;
 
     };
 
