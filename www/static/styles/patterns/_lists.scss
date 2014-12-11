@@ -12,8 +12,7 @@ ul{
     display: inline-block;
     font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
     text-decoration: none;
-    background-color: $gray_med;
-    //border-bottom-color:darken($gray,5%);
+    background-color: darken($gray_light, 10%);
     color: $gray;
 
     .name {

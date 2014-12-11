@@ -1,35 +1,12 @@
-// General pattern settings
-@import "settings";
-
-// Anything to do with sizing
+@import "colors";
 @import "dimensions";
-
-// list settings
 @import "utilities";
-
-// Media queries
 @import "mq";
-
-// Browser reset normalization
 @import "normalize";
-
-// Typography settings
 @import "typography";
-
-// Layout settings
-@import "sections";
-
-// Heros
+@import "parts";
 @import "heros";
-
-// buttons settings
 @import "buttons";
-
-// image settings
 @import "images";
-
-// table settings
 @import "tables";
-
-// list settings
 @import "lists";

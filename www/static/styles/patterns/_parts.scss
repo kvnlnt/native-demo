@@ -1,0 +1,18 @@
+section {
+
+    background: $gray_light;
+    &:nth-child(odd) {
+        background: darken($gray_light, 3%)
+    }
+
+    // mobile first
+    @include mq(mobile) {
+        > .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            @include rem(padding,3);
+        }
+    }
+
+
+}

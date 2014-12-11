@@ -4,24 +4,36 @@
 @font-face {font-family: 'ProximaNova-Bold';src: url('fonts/proxima/266478_4_0.eot');src: url('fonts/proxima/266478_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/proxima/266478_4_0.woff') format('woff'),url('fonts/proxima/266478_4_0.ttf') format('truetype'),url('fonts/proxima/266478_4_0.svg#wf') format('svg');}
 @font-face {font-family: 'ProximaNova-ExtraBold';src: url('fonts/proxima/266478_1_0.eot');src: url('fonts/proxima/266478_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/proxima/266478_1_0.woff') format('woff'),url('fonts/proxima/266478_1_0.ttf') format('truetype'),url('fonts/proxima/266478_1_0.svg#wf') format('svg');}
 
+$font_light:      'ProximaNova-Light', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+$font_thin:       'ProximaNova-Thin', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+$font_regular:    'ProximaNova-Regular', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+$font_bold:       'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+$font_extra_bold: 'ProximaNova-ExtraBold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+
+.font-thin { font-family: $font_thin; }
+.font-light { font-family: $font_light; }
+.font-regular { font-family: $font_regular; }
+.font-bold { font-family: $font_bold; }
+.font-boldest { font-family: $font_extra_bold; }
 
 // defaults
 html, body {
     font-size: 10px;
-    font-family: 'ProximaNova-Regular', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    @extend .font-regular;
 }
 
 // headers
 h1, .h1 {
-    @include rem(font-size,4.2);
-    @include rem(line-height,4.5);
+    @extend .font-bold;
+    @include rem(font-size,3);
+    @include rem(line-height,3.5);
     color:$blue_dark;
-    font-family: 'ProximaNova-Light', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
     margin:0;
     padding:0;
 }
 
 h2, .h2 {
+    @extend .font-bold;
     @include rem(font-size,3.6);
     @include rem(line-height,4);
     color:$gray;
@@ -30,15 +42,16 @@ h2, .h2 {
 }
 
 h3, .h3 {
+    @extend .font-bold;
     @include rem(font-size,2.4);
-    @include rem(line-height,6);
+    @include rem(line-height,3);
     color:$blue;
-    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
     margin:0;
     padding:0;
 }
 
 h4, .h4 {
+    @extend .font-bold;
     @include rem(font-size,2);
     @include rem(line-height,3);
     color:$gray;
@@ -48,9 +61,11 @@ h4, .h4 {
 }
 
 p, .p {
-    @include rem(font-size, 1.6);
-    margin:0;
-    padding:1.6rem;
+    @include rem(font-size, 1.5);
+    @include rem(line-height, 2.4);
+    color:lighten($gray,35%);
+    @include rem(margin, 0, 0, 3);
+    padding:0;
 }
 
 strong, .strong {

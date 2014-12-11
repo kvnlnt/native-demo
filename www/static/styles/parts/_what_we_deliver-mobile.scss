@@ -1,0 +1,7 @@
+@include mq(mobile) {
+
+    .service {
+        @include rem(margin, 5, 1);
+    }
+
+}

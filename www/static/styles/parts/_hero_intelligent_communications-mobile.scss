@@ -1,0 +1,14 @@
+@include mq(mobile) {
+    
+    background-color: darken($gray, 5%);
+    @include rem(padding,5);
+    i {
+        display: block;
+        @include rem(font-size, 6);
+        @include rem(margin, 2);
+    }
+    .cta {
+        @include rem(margin-top, 2);
+    }
+
+}
