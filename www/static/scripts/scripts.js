@@ -16,7 +16,7 @@ var flowroute = {};
  * @description 
  * <ul>
  * <li>{@link http://localhost:9000/build/html|Backend} : Backend documentation</li>
- * <li>{@link http://jquery.com|jquery} : DOM manipulation tool</li>
- * <li>{@link http://lodash.com|lodash} : Data manipulation tool</li>
+ * <li>{@link http://zeptojs.com|zepto} : DOM manipulation tool</li>
+ * <li>{@link http://modernizr.com|modernizr} : Feature detection</li>
  * </ul>
  */

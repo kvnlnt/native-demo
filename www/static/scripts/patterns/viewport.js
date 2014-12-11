@@ -4,15 +4,16 @@
 * @version 1.0
 */
 
-"use strict";
-
 flowroute.viewport = (function(module){
+
+    "use strict";
 
     /** @exports viewport  */
 
     /**
      * Check if element is in viewport
-     * @type {object} el
+     * @memberOf module:viewport
+     * @param {object} el part object (should be a <section>)
      */
     module.contains_part = function(el){
 
@@ -26,8 +27,7 @@ flowroute.viewport = (function(module){
     };
 
     /**
-     * On scroll inspect sections
-     * @function floworoute.viewport.on_scroll
+     * Calc and set viewport dimensions and broadcast update event
      * @memberOf module:viewport
      */
     module.set_viewport = function(){
@@ -39,7 +39,7 @@ flowroute.viewport = (function(module){
         module.bottom   = module.top + module.height;
 
         // publish scroll event
-        flowroute.pubsub.publish('VIEWPORT:SCROLL');
+        flowroute.pubsub.publish('VIEWPORT:UPDATE');
 
         return module;
 

@@ -30,6 +30,12 @@
 
         {% block scripts %}
             <script src="{{ url_for('static', filename='assets/vendor.min.js') }}"></script>
+            <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+            <![endif]-->
             <script src="{{ url_for('static', filename='assets/scripts.min.js') }}"></script>
             {% if config.DEBUG %}<script src="//localhost:35729/livereload.js"></script>{% endif %}
         {% endblock %}

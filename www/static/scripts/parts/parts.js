@@ -11,25 +11,22 @@ flowroute.parts = (function(module) {
     /** @exports parts  */
 
     /**
-     * Parts identifying selector
-     * @member flowroute.parts.directive
+     * DOM directive (aka jquery selector)
      * @memberOf module:parts
      */
     module.directive = 'section';
 
     /**
      * Collection of parts on page
-     * @member flowroute.parts.parts
      * @memberOf module:parts
      */
     module.parts = [];
 
     /**
-     * On view event
-     * @function floworoute.parts.mark_viewed
+     * On part view, add viewed class
      * @memberOf module:parts
      */
-    module.mark_viewed = function(el) {
+    module.on_view = function(el) {
 
         // get part
         var part = $(el);
@@ -43,24 +40,23 @@ flowroute.parts = (function(module) {
             flowroute.analytics.log('part', 'viewed', part);
         }
 
-        return part;
+        return el;
 
     };
 
     /**
-     * Get parts in view port
-     * @function floworoute.parts.track_views
+     * Tracks parts in view and calls corresponding functions
      * @memberOf module:parts
      */
-    module.track_views = function(viewClass) {
+    module.track_views = function() {
 
-        var viewClass = '.viewed' || viewClass;
-        var unviewed = module.parts.not(viewClass);
+        // get parts that have not been viewed
+        var unviewed = module.parts.not('.viewed');
 
         // get all parts in view and mark them viewed
         unviewed.each(function(k, v){
             var is_being_viewed = flowroute.viewport.contains_part(v);
-            if(is_being_viewed){ module.mark_viewed(v); }
+            if(is_being_viewed){ module.on_view(v); }
         });
 
         return unviewed;
@@ -69,7 +65,6 @@ flowroute.parts = (function(module) {
 
     /**
      * Initialize module
-     * @function floworoute.parts.init
      * @memberOf module:parts
      */
     module.init = function() {
@@ -78,7 +73,7 @@ flowroute.parts = (function(module) {
         module.parts = $(module.directive);
 
         // register wow parts
-        flowroute.pubsub.subscribe('VIEWPORT:SCROLL', module.track_views);
+        flowroute.pubsub.subscribe('VIEWPORT:UPDATE', module.track_views);
 
         // call manually on init
         module.track_views();

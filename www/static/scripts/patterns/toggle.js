@@ -2,24 +2,26 @@
 * Toggle directive
 * @module toggle
 * @version 1.0
+* @example USAGE
+* // shows result on click
+* <a fr-toggle="showme">show the hidden content</a>
+* <div id="showme" style="display:none;">I'm currently hidden</div>
 */
 
-"use strict";
-
 flowroute.toggle = (function(module){
+
+    "use strict";
 
     /** @exports toggle */
 
     /**
      * DOM elements
-     * @member flowroute.toggle.el
      * @memberOf module:toggle
      */
     module.directive = '[fr-toggle]';
 
     /**
      * toggle element target
-     * @function floworoute.toggle.toggle
      * @memberOf module:toggle
      * @param  {Object} e - click event
      */
@@ -45,7 +47,6 @@ flowroute.toggle = (function(module){
 
     /**
      * Initialize module
-     * @function floworoute.toggle.init
      * @memberOf module:toggle
      */
     module.init = function(){

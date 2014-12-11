@@ -12,10 +12,10 @@ flowroute.util = (function(module) {
 
     /**
      * Debounce function
+     * @memberOf module:util
      * @param {function} func The function to be debounced
      * @param {number} wait milliseconds to wait
      * @param {boolean} immedaite on true, trigger on leading edge, else tailing
-     * @type {[type]}
      */
     module.debounce = function(func, wait, immediate) {
 
