@@ -1,6 +1,7 @@
 section {
 
     background: $gray_light;
+    clear: both;
     &:nth-child(odd) {
         background: darken($gray_light, 3%)
     }
@@ -8,7 +9,7 @@ section {
     // mobile first
     @include mq(mobile) {
         > .wrapper {
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
             @include rem(padding,3);
         }

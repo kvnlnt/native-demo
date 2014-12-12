@@ -1,0 +1,42 @@
+@include mq(tablet) {
+
+    h2 {
+        @include rem(margin-top, 4);
+    }
+
+    .services {
+        text-align: center;
+        @include rem(margin-top, 5);
+    }
+
+    .service {
+        display: block;
+        margin:0;
+        padding:0;
+        text-align: left;
+        vertical-align: top;
+        width: 50%;
+        position:relative;
+        height:180px;
+        float:left;
+        img {
+            position: absolute;
+            left:0;
+            top:0;
+            width:15%;
+        }
+        h3 {
+            position: absolute;
+            left:20%;
+            width:80%;
+        }
+        p {
+            width:75%;
+            position: absolute;
+            @include rem(top, 4);
+            left:20%;
+        }
+        
+    }
+
+}

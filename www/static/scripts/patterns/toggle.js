@@ -18,24 +18,17 @@ flowroute.toggle = (function(module){
      * DOM elements
      * @memberOf module:toggle
      */
-    module.directive = '[fr-toggle]';
+    module.directive = 'fr-toggle';
 
     /**
      * toggle element target
      * @memberOf module:toggle
-     * @param  {Object} e - click event
+     * @param {Object} element - click event
      */
-    module.toggle = function(e){
-
-        // prevent default
-        e.preventDefault();
-        e.stopPropagation();
+    module.toggle = function(element, target){
 
         // get clicked element
-        var el = $(this);
-
-        // get target to toggle
-        var target = $('#' + el.attr('fr-toggle'));
+        var el = $(element);
 
         // toggle show class
         target.toggleClass('show');
@@ -43,6 +36,50 @@ flowroute.toggle = (function(module){
         // rotate icon
         el.find('i').toggleClass('fa-rotate-90');
 
+        return target;
+
+    };
+
+    /**
+     * Get target from element
+     * @memberOf module:toggle
+     * @param {Object} element - click event
+     */
+    module.get_target = function(element){
+
+        // get clicked element
+        var el = $(element);
+
+        // get target to toggle
+        var target = $('#' + el.attr('['+module.directive+']'));
+
+        return target;
+
+    };
+
+
+    /**
+     * On click event
+     * @memberOf module:toggle
+     * @param {Object} element - click event
+     */
+    module.click = function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var target = module.get_target(this);
+        module.toggle(this, target);
+        return e;
+    };
+
+    /**
+     * Helper iterate function
+     * @memberOf module:toggle
+     * @param {number} k key or index
+     * @param {object} v value
+     */
+    module.each = function(k, v){
+        $(this).on('click', module.click);
+        return this;
     };
 
     /**
@@ -52,9 +89,7 @@ flowroute.toggle = (function(module){
     module.init = function(){
         
         // register each element
-        $(module.directive).each(function(){
-            $(this).on('click', module.toggle);
-        });
+        $('['+module.directive+']').each(module.each);
 
     };
 

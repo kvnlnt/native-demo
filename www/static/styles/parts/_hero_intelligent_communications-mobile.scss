@@ -1,7 +1,7 @@
 @include mq(mobile) {
     
     background-color: darken($gray, 5%);
-    @include rem(padding,5);
+    @include rem(padding,5, 0);
     i {
         display: block;
         @include rem(font-size, 6);
