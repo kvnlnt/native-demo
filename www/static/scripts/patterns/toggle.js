@@ -21,7 +21,7 @@ flowroute.toggle = (function(module){
     module.directive = 'fr-toggle';
 
     /**
-     * Container for all registered toggle elements
+     * Container for all registered elements
      * @memberOf module:toggle
      */
     module.elements = [];

@@ -17,22 +17,42 @@ flowroute.images = (function(module){
     module.directive = 'fr-image';
 
     /**
+     * Container for all registered elements
+     * @memberOf module:images
+     */
+    module.elements = [];
+
+    /**
      * Graceful degradation for SVG images
      * @memberOf module:images
      */
-    module.degrade_svg = function(){
+    module.degrade_svg = function(el){
 
-        $('['+module.directive+']').each(function(){
-            
-            // get clicked element
-            var el     = $(this);
-            var src    = el.attr('src');
-            var newsrc = src.replace('.svg','.png');
+        // get params
+        this.el     = el;
+        this.$el    = $(el);
+        this.src    = this.$el.attr('src');
+        this.image  = this.$el.attr(module.directive);
+        this.newsrc = this.image.length ? this.image : this.src.replace('.svg','.png');
 
-            // replace svg image with png replacement
-            el.attr('src', newsrc);
+        // replace
+        this.$el.attr('src', this.newsrc);
 
-        });
+        // return func
+        return this;
+
+    };
+
+    /**
+     * Helper iterate function
+     * @memberOf module:images
+     * @param {number} k key or index
+     * @param {object} v value
+     */
+    module.each = function(k, v){
+
+        module.elements.push(new module.degrade_svg(v));
+        return this;
 
     };
 
@@ -43,7 +63,9 @@ flowroute.images = (function(module){
     module.init = function(){
         
         // gracefully degrade svg images
-        if(!Modernizr.svg){ module.degrade_svg(); }
+        if(!Modernizr.svg){ 
+            $('['+module.directive+']').each(module.each);
+        }
 
     };
 
