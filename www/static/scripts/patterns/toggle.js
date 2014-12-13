@@ -21,54 +21,34 @@ flowroute.toggle = (function(module){
     module.directive = 'fr-toggle';
 
     /**
-     * toggle element target
+     * Container for all registered toggle elements
      * @memberOf module:toggle
-     * @param {Object} element - click event
      */
-    module.toggle = function(element, target){
-
-        // get clicked element
-        var el = $(element);
-
-        // toggle show class
-        target.toggleClass('show');
-
-        // rotate icon
-        el.find('i').toggleClass('fa-rotate-90');
-
-        return target;
-
-    };
+    module.elements = [];
 
     /**
-     * Get target from element
+     * Toggle function
      * @memberOf module:toggle
      * @param {Object} element - click event
      */
-    module.get_target = function(element){
+    module.toggle = function(el, target){
 
-        // get clicked element
-        var el = $(element);
+        // set element
+        var that     = this;
+        this.el      = el;
+        this.$el     = $(el);
+        this.target  = target || $('#'+this.$el.attr(module.directive));
+        this.$target = $(this.target);
 
-        // get target to toggle
-        var target = $('#' + el.attr('['+module.directive+']'));
+        // toggle target on el click
+        this.$el.on('click', function(e){
+            that.$target.toggleClass('show');
+            that.$el.find('i').toggleClass('fa-rotate-90');
+        });
 
-        return target;
+        // return func
+        return this;
 
-    };
-
-
-    /**
-     * On click event
-     * @memberOf module:toggle
-     * @param {Object} element - click event
-     */
-    module.click = function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var target = module.get_target(this);
-        module.toggle(this, target);
-        return e;
     };
 
     /**
@@ -78,8 +58,10 @@ flowroute.toggle = (function(module){
      * @param {object} v value
      */
     module.each = function(k, v){
-        $(this).on('click', module.click);
+
+        module.elements.push(new module.toggle(v));
         return this;
+
     };
 
     /**

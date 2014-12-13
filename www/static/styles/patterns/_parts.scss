@@ -2,8 +2,17 @@ section {
 
     background: $gray_light;
     clear: both;
+
     &:nth-child(odd) {
         background: darken($gray_light, 3%)
+    }
+
+    &.hilight {
+        background-color: $blue;
+        color: $white;
+        h2, p {
+            color:$white;
+        }
     }
 
     // mobile first

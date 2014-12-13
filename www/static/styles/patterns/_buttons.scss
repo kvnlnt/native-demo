@@ -6,7 +6,7 @@
     @include rem(padding,0,1.5);
     border-bottom-style:solid;
     display: inline-block;
-    font-family: 'ProximaNova-Bold', 'Proxima Nova', 'Proxima', 'Montserrat', sans-serif;
+    @extend .font-bold;
     text-decoration: none;
     background-color: $blue;
     border-bottom-color:darken($blue,5%);
@@ -19,7 +19,7 @@
 
     &.cta {
         background-color: $orange;
-        border-bottom-color:darken($orange,5%);
+        border-bottom-color:darken($orange,8%);
         color: $white;
 
         &:hover {
