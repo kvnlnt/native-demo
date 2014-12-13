@@ -14,7 +14,7 @@ flowroute.images = (function(module){
      * DOM directive (aka jquery selector)
      * @memberOf module:images
      */
-    module.directive = '[fr-image]';
+    module.directive = 'fr-image';
 
     /**
      * Graceful degradation for SVG images
@@ -22,7 +22,7 @@ flowroute.images = (function(module){
      */
     module.degrade_svg = function(){
 
-        $(module.directive).each(function(){
+        $('['+module.directive+']').each(function(){
             
             // get clicked element
             var el     = $(this);

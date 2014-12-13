@@ -1,15 +1,18 @@
 describe("toggle", function() {
 
+    // params
     var el;
     var target;
     var toggle;
 
+    // setup
     beforeEach(function() {
         el     = '<button fr-toggle="the_target"><i class="fa fa-bars"></i></button>';
         target = '<div id="the_target">target</div>';
         toggle = new flowroute.toggle.toggle(el, target);
     });
 
+    // assertions
     it("should toggle a show class", function() {
 
         // on

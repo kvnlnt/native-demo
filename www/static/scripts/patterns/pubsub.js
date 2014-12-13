@@ -18,14 +18,14 @@ flowroute.pubsub = (function(module) {
     /** @exports pubsub  */
 
     // event object
-    var o = $({});
+    module.o = $({});
 
     /**
      * Subscribe to event
      * @memberOf module:pubsub
      */
     module.subscribe = function() {
-        o.on.apply(o, arguments);
+        module.o.on.apply(module.o, arguments);
     };
 
     /**
@@ -33,7 +33,7 @@ flowroute.pubsub = (function(module) {
      * @memberOf module:pubsub
      */
     module.unsubscribe = function() {
-        o.off.apply(o, arguments);
+        module.o.off.apply(module.o, arguments);
     };
 
     /**
@@ -41,7 +41,7 @@ flowroute.pubsub = (function(module) {
      * @memberOf module:pubsub
      */
     module.publish = function() {
-        o.trigger.apply(o, arguments);
+        module.o.trigger.apply(module.o, arguments);
     };
 
     // export
