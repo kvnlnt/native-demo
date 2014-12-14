@@ -17,10 +17,10 @@ flowroute.parts = (function(module) {
     module.directive = 'section';
 
     /**
-     * Collection of parts on page
+     * Collection of elements
      * @memberOf module:parts
      */
-    module.parts = [];
+    module.elements = [];
 
     /**
      * On part view, add viewed class
@@ -48,10 +48,11 @@ flowroute.parts = (function(module) {
      * Tracks parts in view and calls corresponding functions
      * @memberOf module:parts
      */
-    module.track_views = function() {
+    module.track_views = function(e, parts) {
 
         // get parts that have not been viewed
-        var unviewed = module.parts.not('.viewed');
+        var parts = parts || module.elements;
+        var unviewed = parts.not('.viewed');
 
         // get all parts in view and mark them viewed
         unviewed.each(function(k, v){
@@ -70,7 +71,7 @@ flowroute.parts = (function(module) {
     module.init = function() {
 
         // collect parts
-        module.parts = $(module.directive);
+        module.elements = $(module.directive);
 
         // register wow parts
         flowroute.pubsub.subscribe('VIEWPORT:UPDATE', module.track_views);
