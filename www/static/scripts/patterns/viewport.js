@@ -15,11 +15,11 @@ flowroute.viewport = (function(module){
      * @memberOf module:viewport
      * @param {object} el part object (should be a <section>)
      */
-    module.contains_part = function(el){
+    module.contains_part = function(el, elTop){
 
         // get params
         var part        = $(el);
-        var part_top    = part.offset().top;
+        var part_top    = elTop || part.offset().top;
         var in_viewport = part_top >= this.top && part_top <= this.bottom;
 
         return in_viewport;
