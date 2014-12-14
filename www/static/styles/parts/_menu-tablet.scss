@@ -23,6 +23,19 @@
                 @include rem(margin-bottom,5);
             }
         }
+        #logo {
+            margin:0;
+            padding: 0;
+            display: inline-block;
+            overflow: hidden;
+            text-indent: 0;
+            @include rem(line-height, 7.5);
+            width:154px;
+            img {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
         .links {
             display: inline-block;
             width: ($tablet-width - 200);

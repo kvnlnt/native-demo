@@ -15,7 +15,7 @@
         {% set tablet_submenu = 'tablet_submenu' if has_submenu == True %}
         <div class="wrapper {{tablet_submenu}}">
             <button class="toggle" fr-toggle="main_menu"><i class="fa fa-bars"></i></button>
-            <a href="/"><h1>Flowroute Inc.</h1></a>
+            <a href="/" id="logo"><img src="{{ url_for('static',filename='assets/images/flowroute_logo.svg') }}" fr-image></a>
             <div id="main_menu" class="links">
                 <ul class="page strong">
                     <li>{{ main_link('.voice', 'VOICE') }}</li>

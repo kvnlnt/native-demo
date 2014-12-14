@@ -62,16 +62,22 @@
             max-width: 100%;
             margin: 0 auto;
         }
-        h1 {
-            @include rem(margin,1.5);
+        .toggle i {
+            vertical-align: middle;
+        }
+        #logo {
+            margin:0;
             padding: 0;
-            text-indent: -999999px;
-            background-image: url(images/flowroute-logo_154x40.png);
-            background-position: left center;
-            background-repeat: no-repeat;
-            width: 50px;
             display: inline-block;
-            vertical-align: top;
+            overflow: hidden;
+            @include rem(width, 7);
+            @include rem(line-height, 8);
+            @include rem(text-indent, 2);
+            img {
+                width:200px;
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
         .links {
             overflow: hidden;
