@@ -1,0 +1,27 @@
+section[part="social_twitter"] {
+
+    @include mq(mobile) {
+
+        background-color: lighten($gray_dark,3%);
+        i {
+            @include rem(font-size, 2.75);
+            color:lighten($gray, 20%);
+            vertical-align: middle;
+            width:40px;
+        }
+        p {
+            display: inline-block;
+            margin:0;
+            @include rem(line-height, 2);
+            @include rem(max-height, 4);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            vertical-align: middle;
+            width:75%;
+        }
+
+    }
+
+    @include mq(mobile-landscape) {}
+
+}
