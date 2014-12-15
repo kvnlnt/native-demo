@@ -12,6 +12,8 @@
     .main {
         #logo {
             width:200px;
+            overflow: inherit;
+            @include rem(line-height, 7.5);
             img {
                 width:154px;
             }

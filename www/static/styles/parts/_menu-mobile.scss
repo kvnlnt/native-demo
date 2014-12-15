@@ -1,14 +1,14 @@
 @include mq(mobile) {
     .toggle {
-        background-color: transparent;
         @include rem(font-size,3);
-        display: block;
-        float: right;
-        height: 50px;
-        width: 50px;
-        @include rem(margin, 1.5);
+        @include rem(height, 7.5);
+        @include rem(width, 7.5);
+        background-color: transparent;
         border: 0;
         color: $white;
+        display: block;
+        float: right;
+        margin:0;
     }
     .toggle-sub {
         background-color: transparent;
@@ -70,9 +70,9 @@
             padding: 0;
             display: inline-block;
             overflow: hidden;
-            @include rem(width, 7);
-            @include rem(line-height, 8);
-            @include rem(text-indent, 2);
+            @include rem(width, 6);
+            @include rem(line-height, 7.5);
+            @include rem(text-indent, 1.5);
             img {
                 width:200px;
                 display: inline-block;
